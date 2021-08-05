@@ -1,0 +1,48 @@
+<h1> Dogs for adoption </h1>
+
+<br>
+
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Search Name:</label>
+
+    <div class="col-sm-3">
+        <input [(ngModel)]="filterName" class="form-control">
+    </div>
+</div>
+
+<br>
+
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Search Race:</label>
+
+    <div class="col-sm-3">
+        <input [(ngModel)]="filterRace" class="form-control">
+    </div>
+</div>
+
+<br>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Race</th>
+            <th>Birthday</th>
+            <th>Playful (5<span class="fa fa-star"></span>)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let pet of _filteredPets">
+            <td><a href="{{pet.imgUrl}}" target="_blank"><img [src]="pet.imgUrl" class="petImg"></a></td>
+            <td class="petName">{{ pet.name }}</td>
+            <td class="petRace">{{ pet.race }}</td>
+            <td class="petBday">{{ pet.birthday }}</td>
+            <td class="petMood"><app-mood-star [mood]="pet.mood"></app-mood-star></td>
+            
+        </tr>
+    </tbody>
+
+</table>

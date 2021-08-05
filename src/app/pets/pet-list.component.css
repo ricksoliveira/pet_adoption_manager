@@ -1,0 +1,30 @@
+.petImg{
+    border-radius: 15px;
+    height: 135px;
+    width: 135px;
+}
+
+.petName, .petBday, .petRace{
+    vertical-align: middle;
+    font-size: 22px;
+}
+
+.petMood{
+    vertical-align: middle;
+}
+
+label{
+    text-align: right;
+}
+
+th{
+    font-size: 18px;
+}
+
+a:hover img{
+    transform: scale(1.2)
+}
+
+img{
+    transition: 0.15s all ease-in-out;
+}
