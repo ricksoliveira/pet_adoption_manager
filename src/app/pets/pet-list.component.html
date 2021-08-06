@@ -31,6 +31,7 @@
             <th>Race</th>
             <th>Birthday</th>
             <th>Playful (5<span class="fa fa-star"></span>)</th>
+            <th>Option</th>
         </tr>
     </thead>
 
@@ -41,7 +42,9 @@
             <td class="petRace">{{ pet.race }}</td>
             <td class="petBday">{{ pet.birthday }}</td>
             <td class="petMood"><app-mood-star [mood]="pet.mood"></app-mood-star></td>
-            
+            <td>
+                <a [routerLink]="['/pets/info', pet.id]" class="btn btn-primary">Edit</a>
+            </td>
         </tr>
     </tbody>
 

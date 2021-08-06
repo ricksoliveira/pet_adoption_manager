@@ -10,6 +10,10 @@ export class PetService{
         return PETS;
     }
 
+    retrievePetById(id: number): Pet {
+        return PETS.find((petIterator: Pet) => petIterator.id === id)!;
+    }
+
 }
 
 var PETS: Pet[] = [
@@ -18,11 +22,19 @@ var PETS: Pet[] = [
         name: 'Yago',
         race: 'Maltese',
         imgUrl: '/assets/images/yago.JPG',
-        birthday: '11/10/2005',
+        birthday: '05/10/2005',
         mood: 3.5
     },
     {
         id: 2,
+        name: 'Lupita',
+        race: 'Dachshund',
+        imgUrl: '/assets/images/lupita.jpg',
+        birthday: '13/07/2020',
+        mood: 4
+    },
+    {
+        id: 3,
         name: 'Tob',
         race: 'Boxer',
         imgUrl: '/assets/images/tob.jpg',
@@ -30,7 +42,7 @@ var PETS: Pet[] = [
         mood: 4
     },
     {
-        id: 3,
+        id: 4,
         name: 'Faisca',
         race: 'Beagle',
         imgUrl: '/assets/images/faisca.jpg',
@@ -38,7 +50,7 @@ var PETS: Pet[] = [
         mood: 3.5
     },
     {
-        id: 4,
+        id: 5,
         name: 'Goku',
         race: 'Golden Retriever',
         imgUrl: '/assets/images/goku.jpg',
@@ -46,7 +58,7 @@ var PETS: Pet[] = [
         mood: 5
     },
     {
-        id: 5,
+        id: 6,
         name: 'Johnny',
         race: 'Shih Tzu',
         imgUrl: '/assets/images/johnny.jpg',
@@ -54,15 +66,15 @@ var PETS: Pet[] = [
         mood: 3
     },
     {
-        id: 6,
+        id: 7,
         name: 'Milu',
         race: 'Corgi',
-        imgUrl: '/assets/images/milu.jpg',
+        imgUrl: '/assets/images/jake.jpg',
         birthday: '15/03/2020',
         mood: 4
     },
     {
-        id: 7,
+        id: 8,
         name: 'Spike',
         race: 'Coker Spaniel',
         imgUrl: '/assets/images/spike.jpg',

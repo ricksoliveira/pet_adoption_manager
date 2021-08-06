@@ -3,7 +3,6 @@ import { Pet } from "./pet";
 import { PetService } from "./pet.service";
 
 @Component({
-    selector: 'app-pet-list',
     templateUrl: './pet-list.component.html',
     styleUrls: ['./pet-list.component.css']
 })

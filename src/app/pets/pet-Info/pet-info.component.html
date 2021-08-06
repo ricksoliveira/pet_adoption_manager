@@ -1,0 +1,59 @@
+<br/><br/>
+
+<div class="form-group row">
+    <div class="form-group col-sm-8">
+
+        <br/>
+
+        <h1>Editing information of the pet:&emsp;{{ pet.name }}</h1>
+
+        <br/><br/><br/>
+
+        <form #petForm="ngForm">
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Name:</label>
+            
+                <div class="col-sm-4">
+                    <input [(ngModel)]="pet.name" name="name" #petName="ngModel" class="form-control">
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Race:</label>
+            
+                <div class="col-sm-4">
+                    <input [(ngModel)]="pet.race" name="race" #petName="ngModel" class="form-control">
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Birthday:</label>
+            
+                <div class="col-sm-4">
+                    <input [(ngModel)]="pet.birthday" name="birthday" #petName="ngModel" class="form-control">
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Mood:</label>
+            
+                <div class="col-sm-4">
+                    <input [(ngModel)]="pet.mood" name="mood" #petName="ngModel" class="form-control">
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="form-group col-sm-4">
+        <a href="{{pet.imgUrl}}" target="_blank"><img [src]="pet.imgUrl" class="petInfoImg"></a>
+    </div>
+</div>
