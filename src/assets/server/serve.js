@@ -1,42 +1,61 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Pet } from './pet';
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
 
-@Injectable({
-    providedIn: 'root'
-})
-export class PetService{
+var currentUser;
 
-    private petUrl: string = 'http://localhost:3100/api/pets';
-
-    constructor(private httpClient: HttpClient){
-    }
-
-    retrieveAllPets(): Observable<Pet[]> {
-        return this.httpClient.get<Pet[]>(this.petUrl);
-    }
-
-    retrievePetById(id: number): Observable<Pet> {
-        return this.httpClient.get<Pet>(`${this.petUrl}/${id}`);
-    }
-
-    save(pet: Pet): Observable<Pet> {
-        if(pet.id){
-            return this.httpClient.put<Pet>(`${this.petUrl}/${pet.id}`, pet);
-        }
-        else{
-            return this.httpClient.post<Pet>(`${this.petUrl}`, pet);
-        }
-    }
-
-    deletePetById(id: number): Observable<any> {
-        return this.httpClient.delete<any>(`${this.petUrl}/${id}`);
-    }
-
+var corsOptions = {
+  orgim: '/',
+  optionsSuccessStatus: 200
 }
 
-var PETS: Pet[] = [
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+
+app.listen(3100, () => {
+  console.log('Server Started!');
+});
+
+app.route('/api/pets').get((request, response) => {
+  response.send(PETS);
+});
+
+app.route('/api/pets').post((request, response) => {
+  let pet = request.body;
+
+  const firstId = PETS ? Math.max.apply(null, PETS.map(petIterator => petIterator.id)) + 1 : 1;
+  pet.id = firstId;
+  PETS.push(pet);
+  
+
+  response.status(201).send(pet);
+});
+
+app.route('/api/pets/:id').put((request, response) => {
+  const petId = +request.params['id'];
+  const pet = request.body;
+
+  const index = PETS.findIndex(petIterator => petIterator.id === petId);
+  PETS[index] = pet;
+
+  response.status(200).send(pet);
+});
+
+app.route('/api/pets/:id').get((request, response) => {
+  const petId = +request.params['id'];
+
+  response.status(200).send(PETS.find(petIterator => petIterator.id === petId));
+});
+
+app.route('/api/pets/:id').delete((request, response)=> {
+  const petId = +request.params['id'];
+  PETS = PETS.filter(petIterator => petIterator.id !== petId);
+  
+  response.status(204).send({});
+});
+
+var PETS = [
     {
         id: 1,
         name: 'Yago',
@@ -101,4 +120,4 @@ var PETS: Pet[] = [
         birthday: '01/09/2018',
         mood: 4.5
     }
-]
+];

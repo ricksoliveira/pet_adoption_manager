@@ -1,6 +1,6 @@
 <h1> Dogs for adoption </h1>
 
-<br>
+<hr><br/>
 
 <div class="form-group row">
     <label class="col-sm-2 col-form-label">Search Name:</label>
@@ -43,7 +43,9 @@
             <td class="petBday">{{ pet.birthday }}</td>
             <td class="petMood"><app-mood-star [mood]="pet.mood"></app-mood-star></td>
             <td>
-                <a [routerLink]="['/pets/info', pet.id]" class="btn btn-primary">Edit</a>
+                <div class="editBtn">
+                   <button [routerLink]="['/pets/info', pet.id]" class="btn btn-primary">Edit</button> 
+                </div>
             </td>
         </tr>
     </tbody>

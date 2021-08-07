@@ -1,10 +1,32 @@
 .petInfoImg{
-    height: 500px;
-    width: 500px;
-    border-radius: 5%;
+    height: 350px;
+    width: 350px;
+    border-radius: 3%;
 }
 
 .petInfoImg:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     transition: 0.25s all ease-in-out;
+}
+
+.btn{
+    margin: 20px;
+  }
+
+.btn:hover{
+    transform: scale(1.25);
+    transition: 0.25s all ease-in-out;
+}
+
+.btn-secondary{
+    margin-right: 150px;
+}
+
+label{
+    font-weight: bold;
+    text-align: right;
+}
+
+button{
+    font-weight: bold;
 }

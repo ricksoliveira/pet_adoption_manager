@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { PetListComponent } from './pets/pet-list.component';
 import { AppComponent } from './app.component';
 import { MoodComponent } from './moodStar/mood.component';
@@ -23,6 +25,7 @@ import { PetInfoComponent } from './pets/pet-Info/pet-info.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'pets', component: PetListComponent

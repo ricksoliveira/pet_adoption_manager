@@ -18,8 +18,17 @@ export class PetListComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this._pets = this.petService.retrieveAllPets();
-        this._filteredPets = this._pets;
+        this.retrieveAllPets();
+    }
+
+    retrieveAllPets(): void {
+        this.petService.retrieveAllPets().subscribe({
+            next: pets => {
+                this._pets = pets;
+                this._filteredPets = this._pets;
+            },
+            error: e => console.log('Error', e)
+        });
     }
 
     set filterName(value: string){

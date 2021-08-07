@@ -15,7 +15,26 @@ export class PetInfoComponent implements OnInit {
     }
 
     ngOnInit(): void{
-        this.pet = this.petService.retrievePetById(+this.activatedRoute.snapshot.paramMap.get('id')!);        
+        this.petService.retrievePetById(+this.activatedRoute.snapshot.paramMap.get('id')!).subscribe({
+            next: pet => this.pet = pet,
+            error: e => console.log('Error', e)
+        });        
+    }
+
+    save(): void{
+        this.petService.save(this.pet).subscribe({
+            next: pet => console.log('Pet saved successfully: ', pet),
+            error: e => console.log('Error ', e)
+        });
+    }
+
+    deletePetById(id: number): void {
+        this.petService.deletePetById(id).subscribe({
+            next: () => {
+                console.log('Deleted Pet successfully!');
+            },
+            error: e => console.log('Error ', e)
+        });
     }
 
 }
