@@ -1,27 +1,68 @@
-# PetManager
+# Pet Manager
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.4.
+### What is `Pet Manager` ?
 
-## Development server
+This project is a front-end of a pet adoption developed using`Angular`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The objective of this project is to understand and study the concepts of `Angular` such as `Components`, `Observables` and `Subscription`.
 
-## Code scaffolding
+<br/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## What do you need to use it?
 
-## Build
+> - **Angular** (at least version 8)
+> - **Any IDE** (recommended VSCode)
+> - **NPM**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<br/>
 
-## Running unit tests
+## How to install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone this repository with the command:
 
-## Running end-to-end tests
+> ```
+> 	git clone https://github.com/ricksoliveira/pet_adoption_manager.git
+> ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Or you can just download it as a `ZIP` file and open the folder within the VSCode.
 
-## Further help
+2. **[Click here](https://drive.google.com/drive/folders/1sO6zhz5ebBZbOL64SrWDDMl30xJDKh0m?usp=sharing)** to download the "simulated server folder", and place it inside your **C: folder**.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+3. Inside the terminal, navigate to the folder you just downloaded and use the command:
+
+> ```
+> 	node serve.js
+> ```
+
+4. Wait for the `Server Started!` appear as shown:
+
+![image](https://user-images.githubusercontent.com/68413884/128964680-eff6a130-fbaf-483f-ab11-ece9518b89e8.png)
+
+5. Inside the VSCode terminal, use the command:
+
+> ```
+> 	ng serve
+> ```
+
+6. Wait for the `Compiled Successfully.` appear as shown: 
+
+![image](https://user-images.githubusercontent.com/68413884/128965147-b3b9df7f-351a-4eaf-92c5-8fecd935ce53.png)
+
+7. Go to the website:
+
+> ```
+> 	http://localhost:4200/pets
+> ```
+
+8. Now you can browse through different pets previously added, you can add more pets by manipulating the `JSON` inside the "simulated server" you downloaded from Google Drive. 
+
+<br/>
+
+## Authors
+
+- **Henrique Servidoni de Oliveira** - [LinkedIn](https://www.linkedin.com/in/ricksoliveira/)
+
+
+## Thanks !
+
+> Special thanks to [**DIO**](https://web.digitalinnovation.one/home) and [**Santander**](https://www.santander.com.br) for the full-stack scholarship opportunity.
